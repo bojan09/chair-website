@@ -1,3 +1,3 @@
 # chair-website
 
-project-link:
+project-link:https://chairs-website.netlify.app/

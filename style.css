@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;900&display=swap');
+
+/* Custom variables */
+:root {
+  /* colors */
+  --clr-primary: #087f5b;
+  --clr-secondary: #099268;
+  --clr-text-primary: #343a40;
+  --clr-text-secondary: #495057;
+
+
+  /* color effects */
+  --box-shadow: 11px 5px 32px -4px rgba(54, 54, 54, 0.2);
+
+  /* font sizes */
+  --fs-primary: clamp(1.8rem, 2vw + .1rem, 2.8rem);
+  --fs-secondary: clamp(1.6rem, 1.4vw + .8rem, 2.4rem);
+  --fs-tertiary: clamp(1.3rem, .8vw + .6rem, 1.8rem);
+
+
+  /* line height */
+  --lh-primary: 1.5;
+  --ln-secondary: 1.25;
+  --ln-tertiary: 1;
+
+
+  /* width*/
+  --width-primary: min(85%, 1800px);
+
+}
+
+/* Base reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+a {
+  list-style: none;
+  text-decoration: none;
+
+}
+
+a {
+  color: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* set the font size of 1rem to 10px */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  margin-inline: auto;
+  text-rendering: optimizeSpeed;
+  line-height: var(--lh-primary);
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  max-width: var(--width-primary);
+  margin-inline: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+/* SVG's */
+svg {
+  max-width: 2.5rem;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* UTILITIES */
+
+/* LAYOUTS */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TYPOGRAHPY */
+
+/* Heading's */
+.heading-primary {
+  font-size: var(--fs-primary);
+  color: var(--clr-text-primary);
+  margin-bottom: 2rem;
+}
+
+.heading-secondary {
+  font-size: var(--fs-secondary);
+  color: var(--clr-text-primary);
+  margin: 2rem 0;
+}
+
+.heading-tertiary {
+  font-size: var(--fs-tertiary);
+  color: var(--clr-text-primary);
+  margin: 1.5rem 0;
+}
+
+/* Paragraphs */
+.paragraph-primary {
+  font-size: var(--fs-secondary);
+  color: var(--clr-text-primary);
+  line-height: var(--ln-primary);
+  margin-bottom: 1.5rem;
+}
+
+.paragraph-secondary {
+  font-size: var(--fs-tertiary);
+  color: var(--clr-text-secondary);
+  line-height: var(--ln-primary);
+  margin-bottom: 1rem;
+}
+
+
+
+
+/* BUTTON STYLES */
+.btn {
+  font-size: var(--fs-tertiary);
+  background-color: var(--clr-primary);
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  max-width: 11rem;
+  max-height: 2.9rem;
+  margin: 2rem 0;
+  padding: 1.6rem;
+  display: grid;
+  place-content: center;
+  box-shadow: var(--box-shadow);
+}
+
+/* BUTTON HOVER ANIMATIONS */
+.btn:hover {
+  background-color: var(--clr-secondary);
+}
+
+
+
+
+/* NAV BAR */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0 5rem 0;
+}
+
+.navbar-links {
+  display: none;
+  font-weight: 600;
+  background-color: var(--clr-primary);
+  opacity: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 20vh;
+}
+
+.nav-link {
+  font-size: var(--fs-secondary);
+  font-weight: 400;
+  color: #fff;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  background-color: var(--clr-secondary);
+}
+
+/* Buger menu styles - start*/
+
+#menu-btn {
+  display: inline-block;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.5rem;
+
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.active>*:hover {
+  color: var(--clr-text-primary);
+  background-color: var(--clr-secondary-100);
+}
+
+/* Buger menu styles - end*/
+
+/* Sections */
+#home-section,
+#features-section,
+#testimonials-section {
+  margin-bottom: 13rem;
+}
+
+#best-selling-section {
+  margin-bottom: 8rem;
+}
+
+/* Home Section */
+
+
+.logo {
+  color: var(--clr-primary);
+}
+
+/* Features Section */
+.features-description {
+  display: grid;
+  place-items: center;
+}
+
+.features-icon {
+  margin: 1.5rem 0;
+  color: var(--clr-primary);
+}
+
+
+/* Testimonials Section */
+.testimonials-container {
+  background-color: var(--clr-primary);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+.testimonials-container p,
+.testimonials-container h2 {
+  color: #fff;
+}
+
+.testimonial {
+  font-size: var(--fs-tertiary);
+}
+
+.chair-details li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  margin-bottom: 1rem;
+  font-size: var(--fs-tertiary);
+}
+
+.chair-details svg {
+  color: var(--clr-secondary);
+}
+
+.chair-price {
+  flex-direction: column;
+  margin: 1.5rem auto;
+  font-size: var(--fs-primary);
+}
+
+footer {
+  height: 20vh;
+  background-color: var(--clr-primary);
+  color: #fff;
+  font-size: var(--fs-secondary);
+  width: 100%;
+}
+
+.footer-links {
+  padding: 2rem;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.copyright {
+  padding: 1rem;
+}
+
+/* Media Queries */
+
+@media screen and (min-width:900px) {
+
+  .container {
+    max-width: 65vw;
+  }
+
+  /* burger menu */
+
+  .icons {
+    display: none;
+  }
+
+  /* Utilities */
+
+  .btn {
+    max-width: 20rem;
+    padding: 2.5rem 4rem;
+  }
+
+  /* Navigation */
+
+  nav {
+    margin-bottom: 8rem;
+  }
+
+  .navbar-links {
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    padding: 1rem;
+    margin: 1rem;
+    transform: scale(1);
+    transition: all .1s ease-in;
+  }
+
+  .nav-link:hover {
+    transform: scale(1.1);
+  }
+
+
+  /* Home Section */
+
+  header>* {
+    max-width: 50%;
+  }
+
+  header {
+    display: flex;
+  }
+
+  .header-container {
+    margin-right: 3.5rem;
+  }
+
+  .home-btn {
+    justify-content: start;
+  }
+
+  /* Features Section */
+
+}

@@ -323,6 +323,18 @@ nav {
   font-size: var(--fs-tertiary);
 }
 
+.chair {
+  background-color: rgb(250, 250, 250);
+  box-shadow: var(--box-shadow);
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+}
+
+.chair img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .chair-details svg {
   color: var(--clr-secondary);
 }
